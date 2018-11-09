@@ -7,6 +7,7 @@ import {
 
 import Home from '../home'
 import DetailsScreen from '../Page/DetailsScreen'
+import Menu from '../Page/Menu'
 import MyNotificationsScreen from '../Page/MyNotificationsScreen'
 
 
@@ -14,6 +15,7 @@ const DrawNav = createStackNavigator(
 {
   Home: Home,
   Details: DetailsScreen,
+  Menu: Menu,
 
 },
  {
@@ -24,15 +26,11 @@ const DrawNav = createStackNavigator(
 
 
 const RootStack = createDrawerNavigator({
-  Home: {
+  DrawNav : {
     screen: DrawNav,
-  },
+  }
 }, {
-    drawerPosition: 'left',
-   // drawerOpenRoute: 'DrawerLeftOpen',
-    contentOptions: {
-      activeTintColor: '#e91e63',
-    },
+  screen: DrawNav,
 });
 
 

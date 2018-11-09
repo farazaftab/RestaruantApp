@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button, View, Text } from 'react-native';
+import * as menu from '../../assets/menu.json';
 
 export default class DetailsScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -8,7 +9,8 @@ export default class DetailsScreen extends React.Component {
       title: 'Details',
       headerLeft: (
         <Button
-          onPress={() =>  navigation.goBack()}
+          onPress={() =>  {
+            navigation.goBack()}}
           title="Back"
         />)
     }
@@ -16,7 +18,7 @@ export default class DetailsScreen extends React.Component {
 
 
     onPress() {
-      alert('This is a button!');
+      alert('This is a button! %j', menu );
     }
   
     render() {

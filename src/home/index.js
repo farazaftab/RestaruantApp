@@ -3,7 +3,7 @@ import { Platform, StatusBar } from 'react-native';
 import { Alert, AppRegistry, ScrollView, Image, Text, View, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { Hero } from '../component/Hero';
 import SideSwipe from 'react-native-sideswipe'; // 1.3.0
-import { Constants, Font } from 'expo';
+//import { Constants, Font } from 'expo';
 
 export default class Home extends React.Component {
 
@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 
   render() {
 
-    const headerCorrection = {paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight} ;
+    const headerCorrection = 10;//{paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight} ;
 
     const planets = [
       { title: 'Burger', value: 'Burger', abbr: 'Burger' },
@@ -98,7 +98,7 @@ export default class Home extends React.Component {
 
           <Text style={[styles.title, styles.row3]}
            
-              onPress={() => this.props.navigation.navigate('Notifications')}
+           onPress={() => Alert.alert("Page is under construction")}
       
             >
             Order For Pick Up
@@ -106,23 +106,31 @@ export default class Home extends React.Component {
 
           <View style={[styles.container]}>
             <Text style={[styles.title, styles.row4]}
-              onPress={this._onPressButton}>
+              onPress={() => Alert.alert("Page is under construction")}
+              >
               Now
           </Text>
             <Text style={[styles.title, styles.row4]}
-              onPress={this._onPressButton}>
+              onPress={() => Alert.alert("Page is under construction")}
+              >
               Later
           </Text>
           </View>
 
            <Text style={[styles.title, styles.row4]}
-              onPress={this._onPressButton}>
+              onPress={() => Alert.alert("Page is under construction")}
+              >
               Pick Up Your Order ASAP
           </Text>
 
            <Text style={[styles.title, styles.row4]}
-              onPress={() => this.props.navigation.navigate('Notifications')}
-              >
+              onPress={() => {
+                /* 1. Navigate to the Details route with params */
+                this.props.navigation.navigate('Menu', {
+                  itemId: 86,
+                  otherParam: 'anything you want here',
+                });
+              }}>
               Choose Your Items
           </Text>
 
@@ -164,7 +172,7 @@ const styles = StyleSheet.create({
   },
   fill: {
     position: 'absolute',
-    top: Constants.statusBarHeight,
+    //top: Constants.statusBarHeight,
     left: 0,
     right: 0,
     bottom: 0,
