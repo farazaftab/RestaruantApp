@@ -98,10 +98,15 @@ export default class Home extends React.Component {
 
           <Text style={[styles.title, styles.row3]}
            
-           onPress={() => Alert.alert("Page is under construction")}
-      
+            onPress={() => {
+              /* 1. Navigate to the Details route with params */
+              this.props.navigation.navigate('LocateUs', {
+                itemId: 86,
+                otherParam: 'anything you want here',
+              });
+            }}
             >
-            Order For Pick Up
+            Locate US
           </Text>
 
           <View style={[styles.container]}>
