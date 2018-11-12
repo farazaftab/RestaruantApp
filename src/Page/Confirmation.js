@@ -3,10 +3,10 @@ import React from 'react';
 import { Button, View, Text } from 'react-native';
 import * as menu from '../../assets/menu.json';
 
-export default class DetailsScreen extends React.Component {
+export default class Confirmation extends React.Component {
     static navigationOptions = ({ navigation }) => {
       return {
-      title: 'Details',
+      title: 'Confirmation Page',
       headerLeft: (
         <Button
           onPress={() =>  {
@@ -29,7 +29,7 @@ export default class DetailsScreen extends React.Component {
   
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Details Screen</Text>
+          <Text>Confirmation Screen</Text>
           <Text>itemId: {JSON.stringify(itemId)}</Text>
           <Text>otherParam: {JSON.stringify(otherParam)}</Text>
           <Button

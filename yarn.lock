@@ -3939,7 +3939,7 @@ lodash.times@^4.3.2:
   resolved "https://registry.yarnpkg.com/lodash.times/-/lodash.times-4.3.2.tgz#3e1f2565c431754d54ab57f2ed1741939285ca1d"
   integrity sha1-Ph8lZcQxdU1Uq1fy7RdBk5KFyh0=
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -4990,7 +4990,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+"prop-types@^15.0 || ^16.0", prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -5117,6 +5117,10 @@ react-native-elements@0.18.5:
     opencollective "^1.0.3"
     prop-types "^15.5.8"
 
+"react-native-maps@https://github.com/react-community/react-native-maps.git":
+  version "0.22.1"
+  resolved "https://github.com/react-community/react-native-maps.git#c7a55f5e2b3b7854e248d35baf8dbd716a95350c"
+
 react-native-paper@^1.2.5:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-1.12.0.tgz#1d891b2068cda4193b42fc527779aa379605ca11"
@@ -5140,7 +5144,7 @@ react-native-sideswipe@1.3.0:
   resolved "https://registry.yarnpkg.com/react-native-sideswipe/-/react-native-sideswipe-1.3.0.tgz#d2ae3e73083a14600b1b2fc0c837f672c472610b"
   integrity sha512-VJYvxb+ze3szwJptFPy9Dkl5TKLzdq8KGCYSNELwrSdAPwA0VUuCO+akNi8hc4yp5eFOY5T37FCMiuRZWvrsxA==
 
-"react-native-tab-view@github:react-navigation/react-native-tab-view":
+react-native-tab-view@react-navigation/react-native-tab-view:
   version "0.0.74"
   resolved "https://codeload.github.com/react-navigation/react-native-tab-view/tar.gz/36ebd834d78b841fc19778c966465d02fd1213bb"
   dependencies:
