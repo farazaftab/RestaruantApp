@@ -26,7 +26,7 @@
       <!-- You will only need to add this meta-data tag, but make sure it's a child of application -->
     <meta-data
      android:name="com.google.android.maps.v2.API_KEY"
-     android:value="AIzaSyC0eYIFYk79W7rjgJxCHAM44ghVuHqBEqU"/>
+     android:value="your-key-file"/>
     </application>
 
 </manifest>
