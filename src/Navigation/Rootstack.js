@@ -13,22 +13,17 @@ import Cart from '../Page/Cart'
 import Adress from '../Page/Adress'
 import Checkout from '../Page/Checkout'
 import Confirmation from '../Page/Confirmation'
-import SimpleTabsContainer from '../Page/SimpleTabs'
+//import SimpleTabsContainer from '../Page/SimpleTabs'
 import Menu from '../Page/Menu'
 import LocateUs from '../Page/locateus'
 import MyNotificationsScreen from '../Page/MyNotificationsScreen'
 
 
-const checkoutStack = createStackNavigator(
-{
-  Details:  SimpleTabsContainer,
-}
-);
 
 
 const SimpleTabs = createBottomTabNavigator(
   {
-    Details:Cart,
+    Cart:Cart,
     Adress:Adress,
     Checkout:Checkout,
     Confirmation:Confirmation,
@@ -48,7 +43,8 @@ const DrawNav = createStackNavigator(
   {
     Home: Home,
     Menu: Menu,
-    LocateUs: LocateUs
+    LocateUs: LocateUs,
+    Details:DetailsScreen,
   },
    {
     initialRouteName: 'Home',

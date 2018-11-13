@@ -1,7 +1,7 @@
 import * as restaurantData from '../../assets/menu.json';
 import React, { Component } from 'react';
-import { AppRegistry, Animated, Dimensions, Easing, Image,Button,  Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-
+import { Alert, Animated, Dimensions, Easing, Image,Button,  Text, View, StyleSheet, TouchableOpacity, ScrollView, TouchableHighlight } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
   
@@ -30,6 +30,13 @@ import { AppRegistry, Animated, Dimensions, Easing, Image,Button,  Text, View, S
   };
   
     measurements = []
+
+    gotoDetails = (data) => {
+      this.props.navigation.navigate('Details', {
+        itemId: 86,
+        otherParam: 'anything you want here',
+      });
+    }
   
     handlePressTout = (toutIndex) => { //when we press a tout, animate it to the top of the screen and reveal its subcategoires
       this.scrollViewRef.scrollTo({
@@ -67,6 +74,7 @@ import { AppRegistry, Animated, Dimensions, Easing, Image,Button,  Text, View, S
                       {...category}
                       handleLayout={this.handleLayout} //when layout is triggered for touts, we can measure them
                       handlePressTout={this.handlePressTout}
+                      clk={this.gotoDetails}
                     />
                   )
                 })
@@ -88,30 +96,53 @@ class CategoryLinks extends React.Component {
 
 
     onPress() {
-      alert('This is a button! %j', menu );
+      Alert.alert('This is a button! %j', menu );
     }
 
+    gotoDetails = () => {
+      this.props.clk("data")
+      // this.props.navigation.navigate('Cart', {
+      //   itemId: 86,
+      //   otherParam: 'anything you want here',
+      // });
+    }
   
     render() {
      
   
       return (
       <Animated.View //view should be animated because its opacity will change
-        style={{ position: 'relative', top: 0, left: 0, opacity: this.props.subcategoryOpacity }}
+        style={{ position: 'relative', top: 0, left: 0, opacity: this.props.subcategoryOpacity, flex: 1, alignItems: 'stretch',justifyContent: 'center'  }}
       >
-        <View>
+       
           {
             this.props["menu-items"] && this.props["menu-items"].map((link, index, links) => { //render our subcategory links
               return (
-                <View
-                  key={link.name}
+                <TouchableOpacity style={{  margin: 10,  backgroundColor: '#e4eac5',  flex: 1, alignItems: 'stretch',justifyContent: 'center', flexDirection: 'column' }}
+                onPress={this.gotoDetails}
+            
+                        key={link.id}
                 >
-                  <Text style={styles.subcategoryLinks}> {link.name}</Text>
-                </View>
+
+      
+                <View style={{     }} >
+                      <Text style={styles.subcategoryLinks}> {link.name}</Text>
+                    </View>
+
+                    <View style={{     }} >
+                    <Text > price  -> {link['sub-items'][0] && link['sub-items'][0].price}</Text>
+                    </View>
+
+                    <View style={{     }} >
+                    <Text style={styles.subcategoryLinks}> {link.description}</Text>
+                  </View>
+        
+
+                </TouchableOpacity>
               )
             })
           }
-        </View>
+     
       </Animated.View>
     )
   }
@@ -126,7 +157,7 @@ class Tout extends React.PureComponent { //using PureComponent will prevent unne
     animatedValue = new Animated.Value(0) //we will animate this value between 0 and 1 to hide and show the subcategories
     animCategoryHeight = this.animatedValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [0, 20 * this.props["menu-items"].length], //when animated value is 1, the subcategory container will be equal to the number of links * each links height
+      outputRange: [0, 100 * this.props["menu-items"].length], //when animated value is 1, the subcategory container will be equal to the number of links * each links height
     })
   
     subcategoryOpacity = new Animated.Value(0) //separate animated value for each subcategory list's opacity, as we will animate this independent of the height
@@ -233,6 +264,13 @@ class Tout extends React.PureComponent { //using PureComponent will prevent unne
       // paddingTop: CONTAINER_PADDING_TOP,
       backgroundColor: 'white',
     },
+    menucontainer: {
+      flex: 1,
+     // alignItems: 'center',
+     // justifyContent: 'center',
+      // paddingTop: CONTAINER_PADDING_TOP,
+      backgroundColor: 'white',
+    },
     toutText: {
       color: 'white',
       backgroundColor: 'transparent',
@@ -252,3 +290,5 @@ class Tout extends React.PureComponent { //using PureComponent will prevent unne
       // lineHeight: 40,
     }
   });
+
+ 

@@ -61,7 +61,7 @@ export default class Home extends React.Component {
           <Text style={[styles.title, styles.row1]}
             onPress={() => {
               /* 1. Navigate to the Details route with params */
-              this.props.navigation.navigate('Details', {
+              this.props.navigation.navigate('Cart', {
                 itemId: 86,
                 otherParam: 'anything you want here',
               });

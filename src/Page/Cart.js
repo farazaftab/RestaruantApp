@@ -1,21 +1,39 @@
 
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Alert, BackHandler } from 'react-native';
 import * as menu from '../../assets/menu.json';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class Cart extends React.Component {
-    static navigationOptions = ({ navigation }) => {
-      return {
-      title: 'Cart Page',
-      headerLeft: (
-        <Button
-          onPress={() =>  {
-            navigation.goBack()}}
-          title="Back"
-        />)
-    }
+
+  constructor(props) {
+    super(props)
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+}
+
+  static navigationOptions = {
+    tabBarLabel: 'Cart 1',
+    tabBarIcon: ({ tintColor, focused, horizontal }) => (
+      <Ionicons
+        name={focused ? 'ios-cart' : 'ios-cart-outline'}
+        size={horizontal ? 20 : 26}
+        style={{ color: tintColor }}
+      />
+    ),
   };
 
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+}
+
+componentWillUnmount() {
+  BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+}
+
+handleBackButtonClick() {
+  Alert.alert("Are you sure you want to exit the checkout");
+  return true;
+}
 
     onPress() {
       alert('This is a button! %j', menu );
@@ -41,11 +59,19 @@ export default class Cart extends React.Component {
           />
           <Button
             title="Go to Home"
-            onPress={() => this.props.navigation.navigate('MainScreen')}
+            onPress={() => 
+              {
+                console.log("this is onpress:::::", this.props )
+                this.props.navigation.navigate('MainScreen')
+              }}
           />
           <Button
             title="Go back"
-            onPress={() => this.props.navigation.goBack()}
+            onPress={() => 
+              {
+                console.log("this is onpress:::::", this.props )
+                this.props.navigation.goBack()
+              }}
           />
         </View>
       );

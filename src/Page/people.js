@@ -1,23 +1,21 @@
 
 import React from 'react';
-import { Button, View, Text, Alert } from 'react-native';
+import { Button, View, Text } from 'react-native';
 import * as menu from '../../assets/menu.json';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default class Confirmation extends React.Component {
-
-  static navigationOptions = {
-    tabBarLabel: 'Confirmation',
-    tabBarIcon: ({ tintColor, focused, horizontal }) => (
-      <Ionicons
-        name={focused ? 'ios-briefcase' : 'ios-briefcase-outline'}
-        size={horizontal ? 20 : 26}
-        style={{ color: tintColor }}
-      />
-    ),
+export default class People extends React.Component {
+    static navigationOptions = ({ navigation }) => {
+      return {
+      title: 'People',
+      headerLeft: (
+        <Button
+          onPress={() =>  {
+            navigation.goBack()}}
+          title="Back"
+        />)
+    }
   };
 
-      
 
     onPress() {
       alert('This is a button! %j', menu );
@@ -31,7 +29,7 @@ export default class Confirmation extends React.Component {
   
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Confirmation Screen</Text>
+          <Text>People Screen</Text>
           <Text>itemId: {JSON.stringify(itemId)}</Text>
           <Text>otherParam: {JSON.stringify(otherParam)}</Text>
           <Button

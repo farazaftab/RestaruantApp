@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import * as menu from '../../assets/menu.json';
+import { NavigationActions } from 'react-navigation'
 
 export default class DetailsScreen extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -29,20 +30,28 @@ export default class DetailsScreen extends React.Component {
   
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Details Screen</Text>
+          <Text>Product Details Screen</Text>
           <Text>itemId: {JSON.stringify(itemId)}</Text>
           <Text>otherParam: {JSON.stringify(otherParam)}</Text>
           <Button
-            title="Go to Details... again"
+            title="Go to Cart Page"
             onPress={() =>
-              this.props.navigation.push('Details', {
-                itemId: Math.floor(Math.random() * 100),
-              })}
+              this.props.navigation.navigate('Cart', {
+                itemId: 86,
+                otherParam: 'anything you want here',
+              }
+            )}
           />
+          {/*
           <Button
             title="Go to Home"
-            onPress={() => this.props.navigation.navigate('MainScreen')}
+            onPress={() => 
+              {
+                console.log("this is onpress:::::", this.props )
+                this.props.navigation.navigate( 'MainScreen')
+              }}
           />
+            */ }
           <Button
             title="Go back"
             onPress={() => this.props.navigation.goBack()}

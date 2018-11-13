@@ -2,18 +2,20 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import * as menu from '../../assets/menu.json';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class Checkout extends React.Component {
-    static navigationOptions = ({ navigation }) => {
-      return {
-      title: 'Checkout Page',
-      headerLeft: (
-        <Button
-          onPress={() =>  {
-            navigation.goBack()}}
-          title="Back"
-        />)
-    }
+
+
+  static navigationOptions = {
+    tabBarLabel: 'Checkout',
+    tabBarIcon: ({ tintColor, focused, horizontal }) => (
+      <Ionicons
+        name={focused ? 'ios-card' : 'ios-card-outline'}
+        size={horizontal ? 20 : 26}
+        style={{ color: tintColor }}
+      />
+    ),
   };
 
 
