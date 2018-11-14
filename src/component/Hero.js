@@ -14,7 +14,7 @@ import images from '../images';
 import letters from '../letters';
 
 const { width: screenWidth } = Dimensions.get('window');
-const width = screenWidth - 125;
+const width = screenWidth - 160;
 
 export class Hero extends Component {
   static WIDTH = width;
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     overflow: 'visible',
-    marginBottom: 30,
-    marginTop: 30
+    marginBottom: 40,
+    marginTop: 25
   },
   planet: Platform.select({
     ios: {

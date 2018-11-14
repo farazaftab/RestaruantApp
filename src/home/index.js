@@ -3,7 +3,10 @@ import { Platform, StatusBar } from 'react-native';
 import { Alert, AppRegistry, ScrollView, Image, Text, View, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { Hero } from '../component/Hero';
 import SideSwipe from 'react-native-sideswipe'; // 1.3.0
+//import Icon from 'react-native-vector-icons/Ionicons';
+//import Icon from 'react-native-vector-icons/FontAwesome';
 //import { Constants, Font } from 'expo';
+import {  Card, Divider, Icon, Avatar, Badge } from 'react-native-elements';
 
 export default class Home extends React.Component {
 
@@ -22,8 +25,9 @@ export default class Home extends React.Component {
 
 
   render() {
-
-    const headerCorrection = 10;//{paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight} ;
+    //const myIcon = (<Icon name="rocket" size={30} color="#900" />)
+   // console.log("myIcon ----- ", myIcon);
+    const headerCorrection = {paddingTop: Platform.OS === 'android'  ? 0 : 0};//Expo.Constants.statusBarHeight} ; // 24
 
     const planets = [
       { title: 'Burger', value: 'Burger', abbr: 'Burger' },
@@ -45,99 +49,166 @@ export default class Home extends React.Component {
 
       return (
 
-        <View style={[headerCorrection, styles.container, styles.titlePlatformSpecific,]}>
+        <View style={[ styles.container,  headerCorrection ]}>
 
 
 
-      <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.props.navigation.navigate('DrawerOpen')}
-        >
-          <Text style={styles.buttonText}>Open Drawer</Text>
-        </TouchableOpacity>
+            <View style={[styles.headingContainer]} >
 
 
 
-          <Text style={[styles.title, styles.row1]}
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              this.props.navigation.navigate('Cart', {
-                itemId: 86,
-                otherParam: 'anything you want here',
-              });
-            }}
-            >
-            My Retaurant
-          </Text>
+  
+                  <Icon
+                  name='menu'
+                  iconStyle={[styles.iconStyle]}
+                  //type='material-community'
+                  size = {40}
+                 color='white'
+                  onPress={() => this.props.navigation.toggleDrawer()}
+                 />
 
-          <Image
-            resizeMode="contain"
-            style={styles.fill}
-            source={require('../../assets/pr-assets/space-bg.jpg')}
-          />
-          <SideSwipe
-            data={planets}
-            shouldCapture={() => true}
-            style={[styles.hero, { width }]}
-            contentContainerStyle={{ paddingTop: 10 }}
-            itemWidth={Hero.WIDTH}
-            threshold={Hero.WIDTH / 4}
-            extractKey={item => item.value}
-            contentOffset={offset}
-            onIndexChange={index =>
-              this.setState(() => ({ currentIndex: index }))}
-            renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
-              <Hero
-                planet={item}
-                index={itemIndex}
-                currentIndex={currentIndex}
-                animatedValue={animatedValue}
-              />
-            )}
-          />
 
-          <Text style={[styles.title, styles.row3]}
-           
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              this.props.navigation.navigate('LocateUs', {
-                itemId: 86,
-                otherParam: 'anything you want here',
-              });
-            }}
-            >
-            Locate US
-          </Text>
 
-          <View style={[styles.container]}>
-            <Text style={[styles.title, styles.row4]}
-              onPress={() => Alert.alert("Page is under construction")}
-              >
-              Now
-          </Text>
-            <Text style={[styles.title, styles.row4]}
-              onPress={() => Alert.alert("Page is under construction")}
-              >
-              Later
-          </Text>
-          </View>
 
-           <Text style={[styles.title, styles.row4]}
-              onPress={() => Alert.alert("Page is under construction")}
-              >
-              Pick Up Your Order ASAP
-          </Text>
+                <View
+                style={[styles.LogoContainer]}
+                >
+                        <Icon
+                          name='food-fork-drink'
+                          iconStyle={[styles.iconStyle]}
+                          type='material-community'
+                          size = {40}
+                          color='white'
+                        />
 
-           <Text style={[styles.title, styles.row4]}
-              onPress={() => {
-                /* 1. Navigate to the Details route with params */
-                this.props.navigation.navigate('Menu', {
+                        <Text style={[styles.title]}> My Retaurant
+                        </Text>
+
+                </View>
+
+
+              <View
+               onPress={() => {
+                this.props.navigation.navigate('Cart', {
                   itemId: 86,
                   otherParam: 'anything you want here',
                 });
-              }}>
-              Choose Your Items
-          </Text>
+              }}
+              >
+          
+                    <Text style={[styles.cartCount]}>
+                      97
+                    </Text>
+            
+
+                  <Icon
+                  name='cart'
+                  iconStyle={[styles.iconStyle]}
+                  type='material-community'
+                  size = {40}
+                 color='white'
+                 onPress={() => {
+                  this.props.navigation.navigate('Cart', {
+                    itemId: 86,
+                    otherParam: 'anything you want here',
+                  });
+                }}
+                 />
+
+              </View>
+
+              
+
+          </View>
+
+          <View style={[styles.CarouselContainer]}>
+            
+            <SideSwipe
+              data={planets}
+              shouldCapture={() => true}
+              style={[styles.hero, { width }]}
+              contentContainerStyle={{ paddingTop: 10 }}
+              itemWidth={Hero.WIDTH}
+              threshold={Hero.WIDTH / 4}
+              extractKey={item => item.value}
+              contentOffset={offset}
+              onIndexChange={index =>
+                this.setState(() => ({ currentIndex: index }))}
+              renderItem={({ itemIndex, currentIndex, item, animatedValue }) => (
+                <Hero
+                  planet={item}
+                  index={itemIndex}
+                  currentIndex={currentIndex}
+                  animatedValue={animatedValue}
+                />
+              )}
+            />
+            </View>
+
+            <View style={[styles.bottomContainer]}
+            >
+                  
+
+                  <TouchableOpacity
+                        style={styles.button}
+
+                        onPress={() => {
+                          /* 1. Navigate to the Details route with params */
+                          this.props.navigation.navigate('LocateUs', {
+                            itemId: 86,
+                            otherParam: 'anything you want here',
+                          });
+                        }}
+                      >
+                        <Text
+                          
+                          >
+                          Locate US
+                        </Text>
+                  </TouchableOpacity>
+
+
+                 <TouchableOpacity
+                        style={styles.button}
+                      >
+                        <Text> Hello there
+                          </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                        style={styles.button}
+                      >
+                        <Text 
+                            onPress={() => Alert.alert("Page is under construction")}
+                            >
+                            Pick Up Your Order ASAP
+                        </Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => {
+                          /* 1. Navigate to the Details route with params */
+                          this.props.navigation.navigate('Menu', {
+                            itemId: 86,
+                            otherParam: 'anything you want here',
+                          });
+                        }}>
+                      
+                    <Text >
+                      
+                      Choose Your Items
+                  </Text>
+                
+
+                  </TouchableOpacity>
+
+
+                  
+
+                 
+
+          </View>
 
         </View>
     );
@@ -152,20 +223,53 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'flex-start',
     //paddingTop: Constants.statusBarHeight,
-    backgroundColor: 'black',
+    backgroundColor: '#918b88',
   },
+
+  headingContainer: {
+   // flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    //paddingTop: Constants.statusBarHeight,
+    flexDirection: 'row',
+    backgroundColor: '#594a43',
+    height: 50,
+    zIndex: 2,
+    width: '100%',
+    marginBottom: 5,
+    
+  },
+  CarouselContainer: {
+    //padding: 10,
+  },
+  LogoContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    //paddingTop: Constants.statusBarHeight,
+    flexDirection: 'row',
+  },
+
+  bottomContainer:{
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  } ,
 
   title: {
    // fontFamily: 'dhurjati',
-    fontSize: 32,
-    letterSpacing: 1.6,
-    opacity: 0.6,
+    //fontSize: 20,
+    //letterSpacing: 1.6,
+   // opacity: 0.6,
+   color: 'white'
 
   },
+  cartCount: {
+    fontSize: 8,
+    position: 'absolute',
+  },
   row1: {
-    zIndex: 2,
-    backgroundColor: '#d6ddc1',
-    width: '100%'
+   
+   // width: '100%'
   },
   row3: {
     zIndex: 2,
@@ -184,6 +288,16 @@ const styles = StyleSheet.create({
   },
   hero: {
    // backgroundColor: 'red',
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#594a43',
+    padding: 10,
+    width: '80%',
+    margin: 10
+  },
+  iconStyle: {
+    marginLeft: 5,
   },
   titlePlatformSpecific: Platform.select({
     ios: {

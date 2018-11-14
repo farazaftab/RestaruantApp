@@ -8,10 +8,12 @@
     "test": "jest",
     "uni": "react-native run-android",
     "generate-s-apk": "cd android && ./gradlew assembleRelease",
-    "clear-watchman": "watchman watch-del-all"
+    "clear-watchman": "watchman watch-del-all",
+    "link-vector": "react-native link react-native-vector-icons",
+    "link-map": "react-native link react-native-maps",
+    "upg-crful": "-react-native upgrade"
   },
   "dependencies": {
-    "@expo/vector-icons": "6.2.2",
     "react": "16.3.1",
     "react-native": "0.57.4",
     "react-native-elements": "0.18.5",
@@ -20,7 +22,8 @@
     "react-native-ticker": "2.0.3",
     "react-navigation": "2.0.0-beta.8",
     "prop-types": "^15.0 || ^16.0",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "react-native-vector-icons": "^6.0.2"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

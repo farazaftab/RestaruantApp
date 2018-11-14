@@ -17,6 +17,7 @@ import Confirmation from '../Page/Confirmation'
 import Menu from '../Page/Menu'
 import LocateUs from '../Page/locateus'
 import MyNotificationsScreen from '../Page/MyNotificationsScreen'
+import SideMenu from '../component/SideMenu'
 
 
 
@@ -58,7 +59,8 @@ const DrawNav = createStackNavigator(
       screen: DrawNav,
     }
   }, {
-    screen: DrawNav,
+      contentComponent: SideMenu,
+      drawerWidth: 300
   });
 
 

@@ -1,8 +1,11 @@
 
 import React from 'react';
-import { Button, View, Text, Alert, BackHandler } from 'react-native';
+import { Button, View, Alert, BackHandler,ScrollView, StyleSheet   } from 'react-native';
 import * as menu from '../../assets/menu.json';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+//import Ionicons from 'react-native-vector-icons/Ionicons';
+import {  Card, Divider, Icon, Text, Avatar } from 'react-native-elements';
+
+
 
 export default class Cart extends React.Component {
 
@@ -13,13 +16,7 @@ export default class Cart extends React.Component {
 
   static navigationOptions = {
     tabBarLabel: 'Cart 1',
-    tabBarIcon: ({ tintColor, focused, horizontal }) => (
-      <Ionicons
-        name={focused ? 'ios-cart' : 'ios-cart-outline'}
-        size={horizontal ? 20 : 26}
-        style={{ color: tintColor }}
-      />
-    ),
+
   };
 
   componentWillMount() {
@@ -46,34 +43,28 @@ handleBackButtonClick() {
       const otherParam = navigation.getParam('otherParam', 'some default value');
   
       return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Cart Page</Text>
-          <Text>itemId: {JSON.stringify(itemId)}</Text>
-          <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-          <Button
-            title="Go to Details... again"
-            onPress={() =>
-              this.props.navigation.push('Details', {
-                itemId: Math.floor(Math.random() * 100),
-              })}
-          />
-          <Button
-            title="Go to Home"
-            onPress={() => 
-              {
-                console.log("this is onpress:::::", this.props )
-                this.props.navigation.navigate('MainScreen')
-              }}
-          />
-          <Button
-            title="Go back"
-            onPress={() => 
-              {
-                console.log("this is onpress:::::", this.props )
-                this.props.navigation.goBack()
-              }}
-          />
-        </View>
+        <ScrollView style={styles.container}>
+       
+       <Icon
+          name='menu'
+          type='material-community'
+          color='#517fa4'
+
+        />
+       
+      
+      </ScrollView>
       );
     }
   }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+    },
+    textStyle: {
+      fontSize: 18,
+      textAlign: 'center',
+      padding: 10,
+    },
+  });

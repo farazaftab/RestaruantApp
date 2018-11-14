@@ -1,4 +1,4 @@
-package com.MyRestaurant;
+package com.myrestaurant;
 
 import com.facebook.react.ReactActivity;
 
