@@ -3,7 +3,7 @@ import React from 'react';
 import { Button, View, Alert, BackHandler,ScrollView, StyleSheet   } from 'react-native';
 import * as menu from '../../assets/menu.json';
 //import Ionicons from 'react-native-vector-icons/Ionicons';
-import {  Card, Divider, Icon, Text, Avatar } from 'react-native-elements';
+import {  Card, Divider, Icon, Avatar } from 'react-native-elements';
 
 
 
@@ -15,7 +15,14 @@ export default class Cart extends React.Component {
 }
 
   static navigationOptions = {
-    tabBarLabel: 'Cart 1',
+    tabBarLabel: 'Cart',
+    tabBarIcon: ({ tintColor, focused, horizontal }) => (
+      <Icon
+      name='cart'
+      type='material-community'
+      color= {tintColor}
+      />
+  ),
 
   };
 
@@ -28,7 +35,18 @@ componentWillUnmount() {
 }
 
 handleBackButtonClick() {
-  Alert.alert("Are you sure you want to exit the checkout");
+ 
+  Alert.alert(
+    '',
+    'Are you sure you want to exit the checkout?',
+    [
+    //  {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+      {text: 'OK', onPress: () => this.props.navigation.navigate('MainScreen')},
+      {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+    ],
+    { cancelable: true }
+  )
+
   return true;
 }
 

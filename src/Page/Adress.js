@@ -2,17 +2,17 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import * as menu from '../../assets/menu.json';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {  Card, Divider, Icon, Avatar } from 'react-native-elements';
 
 export default class Address extends React.Component {
   
   static navigationOptions = {
     tabBarLabel: 'Address',
     tabBarIcon: ({ tintColor, focused, horizontal }) => (
-      <Ionicons
-        name={focused ? 'ios-book' : 'ios-book-outline'}
-        size={horizontal ? 20 : 26}
-        style={{ color: tintColor }}
+      <Icon
+      name='account-location'
+      type='material-community'
+      color= {tintColor}
       />
     ),
   };

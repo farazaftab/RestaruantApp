@@ -2,17 +2,17 @@
 import React from 'react';
 import { Button, View, Text, Alert } from 'react-native';
 import * as menu from '../../assets/menu.json';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {  Card, Divider, Icon, Avatar } from 'react-native-elements';
 
 export default class Confirmation extends React.Component {
 
   static navigationOptions = {
     tabBarLabel: 'Confirmation',
     tabBarIcon: ({ tintColor, focused, horizontal }) => (
-      <Ionicons
-        name={focused ? 'ios-briefcase' : 'ios-briefcase-outline'}
-        size={horizontal ? 20 : 26}
-        style={{ color: tintColor }}
+      <Icon
+      name='truck'
+      type='material-community'
+      color= {tintColor}
       />
     ),
   };

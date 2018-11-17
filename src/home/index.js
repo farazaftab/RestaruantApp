@@ -6,9 +6,18 @@ import SideSwipe from 'react-native-sideswipe'; // 1.3.0
 //import Icon from 'react-native-vector-icons/Ionicons';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 //import { Constants, Font } from 'expo';
-import { Card, Divider, Icon, Avatar, Badge } from 'react-native-elements';
+import { Icon, ButtonGroup } from 'react-native-elements';
 
 export default class Home extends React.Component {
+
+
+  constructor () {
+    super()
+    this.state = {
+      selectedIndex: 0
+    }
+    this.updateIndex = this.updateIndex.bind(this)
+  }
 
   _onPressButton() {
     this.props.navigation.navigate('Details', {
@@ -17,16 +26,29 @@ export default class Home extends React.Component {
     });
   }
 
+  updateIndex (selectedIndex) {
+    this.setState({selectedIndex})
+  }
+
   static navigationOptions = {
     title: 'Home',
     header: null,
   };
 
 
+  componentDidMount() {
+   // this.props.navigation.openDrawer()
+   }
+
+
+
   render() {
     //const myIcon = (<Icon name="rocket" size={30} color="#900" />)
     // console.log("myIcon ----- ", myIcon);
-    const headerCorrection = { paddingTop: 0 };//Platform.OS === 'android'  ? 24 : 24};//Expo.Constants.statusBarHeight} ; // 24
+    const headerCorrection = { paddingTop: Expo.Constants.statusBarHeight };//Platform.OS === 'android'  ? 24 : 24};//Expo.Constants.statusBarHeight} ; // 24
+  
+    const buttons = ['ASAP', 'Pick Up Later']
+    const { selectedIndex } = this.state
 
     const planets = [
       { title: 'Burger', value: 'Burger', abbr: 'Burger' },
@@ -141,15 +163,22 @@ export default class Home extends React.Component {
               Locate US
                         </Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-          >
-            <Text
-            style={styles.buttonText}
-            > Hello there
-             
-             </Text>
-          </TouchableOpacity>
+
+
+
+          <ButtonGroup
+          //component = 
+            onPress={this.updateIndex}
+            selectedIndex={selectedIndex}
+            buttons={buttons}
+            containerStyle={[styles.buttonGroup]}
+            selectedBackgroundColor = '#4d0000'
+            selectedTextStyle = {[styles.buttonText]}
+          />
+
+
+
+
           <TouchableOpacity
             style={styles.button}
             onPress={() => Alert.alert("Page is under construction")}
@@ -247,6 +276,13 @@ const styles = StyleSheet.create({
     height: 60,
     margin: 10
   },
+  buttonGroup: {
+    backgroundColor: 'white',
+    padding: 10,
+    height: 60,
+    margin: 10
+  },
+
   iconStyle: {
     marginLeft: 5,
   },
