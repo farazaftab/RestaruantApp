@@ -1,0 +1,282 @@
+{
+    "id": "11",
+    "menu_category_name": "Meals",
+    "menu_category_id": "4338265",
+    "name": "BACON KING™ Sandwich Meal",
+    "description": "Our BACON KING™ Sandwich features two 4.4 oz* savory flame-grilled beef patties, topped a with hearty portion of thick-cut smoked bacon, melted American cheese and topped with ketchup and creamy mayonnaise all on a soft sesame seed bun. Meal comes in medium and large sizes. Your choice of a side of piping hot, thick cut French Fries or golden Onion Rings and a fountain drink of your choice to make it a meal. *Based on pre-cooked patty weight.",
+    "price": {
+        "amount": 10,
+        "currency": "USD"
+    },
+    "delivery_price": {
+        "amount": 10,
+        "currency": "USD"
+    },
+    "pickup_price": {
+        "amount": 10,
+        "currency": "USD"
+    },
+    "tax": 7,
+    "tax_rate": {
+        "name": "RestaurantTax",
+        "rate": 7
+    },
+    "minimum_cart_total": {
+        "amount": 0,
+        "currency": "USD"
+    },
+    "combinable_with_coupons": true,
+    "sequence": 1,
+    "minimum_price_variation": {
+        "amount": 979,
+        "currency": "USD"
+    },
+    "delivery_minimum_price_variation": {
+        "amount": 979,
+        "currency": "USD"
+    },
+    "pickup_minimum_price_variation": {
+        "amount": 979,
+        "currency": "USD"
+    },
+    "maximum_price_variation": {
+        "amount": 1029,
+        "currency": "USD"
+    },
+    "delivery_maximum_price_variation": {
+        "amount": 1029,
+        "currency": "USD"
+    },
+    "pickup_maximum_price_variation": {
+        "amount": 1029,
+        "currency": "USD"
+    },
+    "available": true,
+    "choice_category_list": [{
+        "uuid": "001",
+        "id": "18175986",
+        "name": "Choose a size",
+        "min_choice_options": 1,
+        "max_choice_options": 1,
+        "choice_option_list": [{
+            "id": "88554694",
+            "description": "Medium",
+            "price": {
+                "amount": 979,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 979,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 979,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 1
+        }, {
+            "id": "88554695",
+            "description": "Large",
+            "price": {
+                "amount": 1029,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 1029,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 1029,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 2
+        }],
+        "variation_target": true,
+        "sequence": 1
+    }, {
+        "uuid": "002",
+        "id": "18176052",
+        "name": "Choose a drink",
+        "min_choice_options": 1,
+        "included_choice_options": 0,
+        "max_choice_options": 1,
+        "choice_option_list": [{
+            "uuid": "-OAcodIlEei-vt0ydKqt4g",
+            "id": "88554851",
+            "description": "Coca-Cola®",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 1,
+            "defaulted": false,
+            "tags": []
+        }, {
+            "uuid": "003",
+            "id": "88554852",
+            "description": "Diet Coke®",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 2,
+            "defaulted": false,
+            "tags": []
+        }, {
+            "uuid": "004",
+            "id": "88554854",
+            "description": "Dr Pepper®",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 3,
+            "defaulted": false,
+            "tags": []
+        }, {
+            "uuid": "02",
+            "id": "88554856",
+            "description": "Sprite®",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 4,
+            "defaulted": false,
+            "tags": []
+        }, {
+            "uuid": "5",
+            "id": "88554857",
+            "description": "Orange Fanta®",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 5,
+            "defaulted": false,
+            "tags": []
+        }],
+        "variation_target": false,
+        "item_variation_id": 18175986,
+        "sequence": 2
+    }, {
+        "uuid": "4",
+        "id": "18176068",
+        "name": "Choose a side",
+        "min_choice_options": 1,
+        "included_choice_options": 0,
+        "max_choice_options": 1,
+        "choice_option_list": [{
+            "uuid": "",
+            "id": "88554900",
+            "description": "French Fries",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 1,
+            "defaulted": false,
+            "tags": []
+        }, {
+            "uuid": "",
+            "id": "88554902",
+            "description": "Onion Rings",
+            "price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "delivery_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "pickup_price": {
+                "amount": 0,
+                "currency": "USD"
+            },
+            "choice_category_list": [],
+            "price_changes": {},
+            "sequence": 2,
+            "defaulted": false,
+            "tags": []
+        }],
+        "variation_target": false,
+        "item_variation_id": 18175986,
+        "sequence": 3
+    }],
+    "media_image": {
+        "base_url": "",
+        "public_id": "ffybwmw4v0ikw7ocezsi",
+        "format": "jpg",
+        "tag": "placeholder"
+    },
+    "dishes": ["sandwich meal", "sandwiches"],
+    "allowable_order_types": ["standard"],
+    "menu_item_features": [],
+    "item_coupon": false,
+    "popular": true,
+    "deleted": false
+}

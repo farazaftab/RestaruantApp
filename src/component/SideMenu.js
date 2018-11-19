@@ -15,14 +15,13 @@ export default class SideMenu extends React.Component {
   
     render() {
 
-      const headerCorrection = { paddingTop: Expo.Constants.statusBarHeight };
       /* 2. Get the param, provide a fallback value if not available */
       const { navigation } = this.props;
       const itemId = navigation.getParam('itemId', 'NO-ID');
       const otherParam = navigation.getParam('otherParam', 'some default value');
   
       return (
-        <View style={[styles.container, headerCorrection]}>
+        <View style={[styles.container]}>
 
            <View
             style={[styles.logoContainer]}

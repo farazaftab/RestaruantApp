@@ -17,6 +17,7 @@ export default class Home extends React.Component {
       selectedIndex: 0
     }
     this.updateIndex = this.updateIndex.bind(this)
+
   }
 
   _onPressButton() {
@@ -37,15 +38,15 @@ export default class Home extends React.Component {
 
 
   componentDidMount() {
-   // this.props.navigation.openDrawer()
+    //this.props.navigation.openDrawer()
+
+   
+
    }
 
 
 
   render() {
-    //const myIcon = (<Icon name="rocket" size={30} color="#900" />)
-    // console.log("myIcon ----- ", myIcon);
-    const headerCorrection = { paddingTop: Expo.Constants.statusBarHeight };//Platform.OS === 'android'  ? 24 : 24};//Expo.Constants.statusBarHeight} ; // 24
   
     const buttons = ['ASAP', 'Pick Up Later']
     const { selectedIndex } = this.state
@@ -70,7 +71,7 @@ export default class Home extends React.Component {
 
     return (
 
-      <View style={[styles.container, headerCorrection]}>
+      <View style={[styles.container]}>
         <View style={[styles.headingContainer]} >
           <Icon
             name='menu'
@@ -181,8 +182,13 @@ export default class Home extends React.Component {
 
           <TouchableOpacity
             style={styles.button}
-            onPress={() => Alert.alert("Page is under construction")}
+            onPress={() => this.props.navigation.navigate('Details', {
+              itemId: 86,
+              otherParam: 'anything you want here',
+            })
+          }
           >
+
             <Text
             style={styles.buttonText}
             >
